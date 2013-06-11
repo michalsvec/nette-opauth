@@ -1,9 +1,12 @@
 <?php
 
-
 namespace Elemedia\Opauth;
 
-
+/**
+ * Wrapper for data returned from facebook oauth server
+ *
+ * @author Michal Svec <pan.svec@gmail.com>
+ */
 class FacebookIdentity extends BaseIdentity implements IOpauthIdentity 
 {
 	public function getProvider()

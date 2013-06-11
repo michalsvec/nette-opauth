@@ -2,11 +2,22 @@
 
 namespace Elemedia\Opauth;
 
+use Nette\Application\IRouter;
 use Nette\Application\Routers\Route;
 
-
+/**
+ * Init class to plug into Nette framework
+ *
+ * @author  Michal Svec <pan.svec@gmail.com>
+ * @package Elemedia\Opauth
+ */
 class Opauth 
 {
+	/**
+	 * Function to registeer router for this extension
+	 *
+	 * @param IRouter $router
+	 */
 	public static function register($router)
 	{
 		// opauth URLs
@@ -18,6 +29,10 @@ class Opauth
 		$router[] = new Route('/auth/<strategy>/int_callback', 'Auth:auth');
 	}
 
+	/**
+	 * @param  array $info  array returned from oauth provider
+	 * @return IOpauthIdentity
+	 */
 	public static function createIdentity($info)
 	{
 		switch($info['provider'])

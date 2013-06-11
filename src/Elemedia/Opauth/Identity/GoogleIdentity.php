@@ -1,8 +1,12 @@
 <?php
 
-
 namespace Elemedia\Opauth;
 
+/**
+ * Wrapper for data returned from google oauth server
+ *
+ * @author Michal Svec <pan.svec@gmail.com>
+ */
 class GoogleIdentity extends BaseIdentity implements IOpauthIdentity 
 {
 	public function getProvider()
