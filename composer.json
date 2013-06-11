@@ -1,0 +1,22 @@
+{
+	"name": "elemedia/opauth",
+	"type": "library",
+	"description": "Opauth extension for Nette framework",
+	"keywords": ["nette", "opauth"],
+	"homepage": "",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Michal Svec",
+			"homepage": "http://michalsvec.cz"
+		}
+	],
+	"support": {
+		"email": "kontakt@michalsvec.cz",
+		"issues": "https://github.com/"
+	},
+	"require": {
+		"nette/nette": "~2.0",
+		"opauth/opauth": "@stable"
+	}
+}
