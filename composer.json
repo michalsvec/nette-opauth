@@ -1,10 +1,10 @@
 {
-	"name": "elemedia/opauth",
+	"name": "kingofthejungle/nette-opauth",
 	"type": "library",
 	"description": "Opauth extension for Nette framework",
 	"keywords": ["nette", "opauth"],
 	"homepage": "",
-	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Michal Svec",
@@ -13,10 +13,10 @@
 	],
 	"support": {
 		"email": "kontakt@michalsvec.cz",
-		"issues": "https://github.com/"
+		"issues": "https://github.com/kingofthejungle/nette-opauth"
 	},
 	"require": {
-		"nette/nette": "~2.0",
+		"nette/nette": "~2",
 		"opauth/opauth": "@stable"
 	}
 }
