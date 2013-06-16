@@ -23,6 +23,6 @@
 		"opauth/twitter": "*"
 	},
   "autoload": {
-    "psr-0": {"NetteOpauth\\": "src/NetteOpauth"}
+    "classmap": ["src/NetteOpauth/"]
   }
 }
