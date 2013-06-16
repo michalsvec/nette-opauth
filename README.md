@@ -45,7 +45,6 @@ Configure in config.neon
 ```
 opauth:
 	path: '/auth/'
-	presenter: 'Auth'
 	debug: true
 	callback_url: '{path}callback'
 	security_salt: '123abc456def'
