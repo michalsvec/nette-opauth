@@ -29,10 +29,13 @@ class AuthPresenter extends \Nette\Application\UI\Presenter
 		$this->terminate();
 	}
 
-	public function actionCallback()
+	/**
+	 * @param string
+	 */
+	public function actionCallback($strategy)
 	{
-		$identity = $this->opauth->callback();
-		
+		$identity = $this->opauth->callback($strategy);
+
 		$this->context->user->login($identity);
 		$this->redirect("Homepage:default");
 	}
