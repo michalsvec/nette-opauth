@@ -22,9 +22,7 @@
 		"opauth/google": "*",
 		"opauth/twitter": "*"
 	},
-	 "autoload": {
-        "psr-0": {
-            "nette-opauth": "src"
-        }
-    }
+  "autoload": {
+    "psr-0": {"NetteOpauth\\": "src/NetteOpauth"}
+  }
 }

@@ -12,7 +12,7 @@ class Extension extends Nette\Config\CompilerExtension
 		'path' => '/auth/',
 		'callback_url' => '{path}callback',
 		'security_salt' => '123abc456def',
-		'debug' => true,
+		'debug' => false,
 	);
 
 	public function loadConfiguration()
