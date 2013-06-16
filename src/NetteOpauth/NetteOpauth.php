@@ -15,7 +15,7 @@ use NetteOpauth\Security\TwitterIdentity;
  *
  * @author  Michal Svec <pan.svec@gmail.com>
  */
-class NetteOpauth 
+class NetteOpauth
 {
 	/**
 	 * @var array
@@ -35,10 +35,16 @@ class NetteOpauth
 	 *
 	 * @param string|null $strategy chosen strategy - f.e. "facebook". Can be "fake" to use on localhost
 	 */
-	public function auth($strategy = NULL)
+	public function auth($strategy)
+	{
+		// let the Opauth do the magic :)
+		new \Opauth($this->config);
+	}
+
+	public function callback($strategy)
 	{
 		if($strategy == 'fake') {
-			$fakeLogin = array(
+			return $this->createIdentity(array(
 				'uid' => "123123123",
 				'info' => array(
 					'name' => "Chuck Norris",
@@ -51,23 +57,15 @@ class NetteOpauth
 					'family_name' => "Norris",
 				),
 				'provider' => 'Google'
-			);
-
-			return $this->createIdentity($fakeLogin);
+			));
 		}
 
-		// let the Opauth do the magic :)
-		new \Opauth($this->config);
-	}
-
-	public function callback()
-	{
 		$Opauth = new \Opauth($this->config, false);
 
 		$response = null;
 
 		switch ($Opauth->env['callback_transport']) {
-			case 'session':				
+			case 'session':
 				$response = $_SESSION['opauth'];
 				unset($_SESSION['opauth']);
 				break;
