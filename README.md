@@ -30,6 +30,12 @@ and then
 $ composer update
 ```
 
+```php
+$configurator->onCompile[] = function (Configurator $config, Compiler $compiler) {
+    $compiler->addExtension('opauth', new NetteOpauth\DI\Extension());
+};
+```
+
 Roadmap
 -------
 - [ ] add more identities for various providers

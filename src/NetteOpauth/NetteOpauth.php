@@ -14,11 +14,16 @@ use Nette\Application\Routers\Route;
 class NetteOpauth 
 {
 	/**
+	 * @var array
+	 */
+	protected $config;
+
+	/**
 	 * @param $user
 	 */
-	public function __construct($user)
+	public function __construct($config)
 	{
-
+		$this->config = $config;
 	}
 
 	/**
@@ -48,12 +53,12 @@ class NetteOpauth
 		}
 
 		// let the Opauth do the magic :)
-		new Opauth($this->context->parameters['auth']);
+		new Opauth($this->config);
 	}
 
 	public function callback()
 	{
-		$Opauth = new Opauth($this->context->parameters['auth'], false);
+		$Opauth = new Opauth($this->config, false);
 
 		$response = null;
 
@@ -73,7 +78,7 @@ class NetteOpauth
 				break;
 		}
 		
-		file_put_contents(WWW_DIR.'/../log/response.log', print_r($response, true), FILE_APPEND);
+		// file_put_contents(WWW_DIR.'/../log/response.log', print_r($response, true), FILE_APPEND);
 
 		if (array_key_exists('error', $response)) {
 			throw new Exception($response['message']);
