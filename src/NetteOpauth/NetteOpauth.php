@@ -19,9 +19,9 @@ class NetteOpauth
 	protected $config;
 
 	/**
-	 * @param $user
+	 * @param array $config
 	 */
-	public function __construct($config)
+	public function setConfig($config)
 	{
 		$this->config = $config;
 	}

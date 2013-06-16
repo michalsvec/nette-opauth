@@ -3,7 +3,7 @@
 namespace NetteOpauth\DI;
 
 
-class Extension extends Nette\Config\CompilerExtension
+class Extension extends \Nette\Config\CompilerExtension
 {
 	/**
 	 * @var array
@@ -21,6 +21,7 @@ class Extension extends Nette\Config\CompilerExtension
 		$builder = $this->getContainerBuilder();
 
 		$opauth = $builder->addDefinition($this->prefix('opauth'));
-		$opauth->setClass('NetteOpauth\NetteOpauth', $config);
+		$opauth->setClass('NetteOpauth\NetteOpauth');
+		$opauth->addSetup('setConfig', $config);
 	}
 }
