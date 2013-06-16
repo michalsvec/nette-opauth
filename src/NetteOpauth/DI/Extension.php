@@ -10,6 +10,7 @@ class Extension extends \Nette\Config\CompilerExtension
 	 */
 	public $defaults = array(
 		'path' => '/auth/',
+		'presenter' => 'Auth',
 		'callback_url' => '{path}callback',
 		'security_salt' => '123abc456def',
 		'debug' => false,

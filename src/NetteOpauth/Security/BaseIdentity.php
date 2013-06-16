@@ -30,6 +30,14 @@ class BaseIdentity extends \Nette\Security\Identity implements IOpauthIdentity
 	/**
 	 * {@inheritdoc}
 	 */
+	public function getProvider()
+	{
+		return "Generic";
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
 	public function getName()
 	{
 		return $this->data['name'];

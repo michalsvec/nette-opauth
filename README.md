@@ -31,9 +31,39 @@ $ composer update
 ```
 
 ```php
+// add compiler extension
 $configurator->onCompile[] = function (Configurator $config, Compiler $compiler) {
     $compiler->addExtension('opauth', new NetteOpauth\DI\Extension());
 };
+
+// register routers
+\NetteOpauth\NetteOpauth::register($container->router);
+```
+
+Configure in config.neon
+------------
+```
+opauth:
+	path: '/auth/'
+	presenter: 'Auth'
+	debug: true
+	callback_url: '{path}callback'
+	security_salt: '123abc456def'
+	debug: true
+	Strategy: [
+		Facebook: [
+			app_id: ''
+			app_secret: ''
+		],
+		Google: [
+			client_id: ''
+			client_secret: ''
+		],
+		Twitter: [
+			key: '',
+			secret: ''
+		]
+	]
 ```
 
 Roadmap

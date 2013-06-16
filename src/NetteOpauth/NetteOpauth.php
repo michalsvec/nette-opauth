@@ -4,12 +4,15 @@ namespace NetteOpauth;
 
 use Nette\Application\IRouter;
 use Nette\Application\Routers\Route;
+use Nette\Diagnostics\Debugger;
+use NetteOpauth\Security\FacebookIdentity;
+use NetteOpauth\Security\GoogleIdentity;
+use NetteOpauth\Security\TwitterIdentity;
 
 /**
  * Init class to plug into Nette framework
  *
  * @author  Michal Svec <pan.svec@gmail.com>
- * @package Elemedia\Opauth
  */
 class NetteOpauth 
 {
@@ -77,8 +80,8 @@ class NetteOpauth
 				throw new InvalidArgumentException("Unsupported callback transport.");
 				break;
 		}
-		
-		// file_put_contents(WWW_DIR.'/../log/response.log', print_r($response, true), FILE_APPEND);
+
+		Debugger::log($response);
 
 		if (array_key_exists('error', $response)) {
 			throw new Exception($response['message']);
@@ -102,13 +105,15 @@ class NetteOpauth
 	 */
 	public static function register($router)
 	{
-		// opauth URLs
-		$router[] = new Route('/auth/logout', 'Auth:logout');
-		$router[] = new Route('/auth/callback', 'Auth:callback');
-		$router[] = new Route('/auth/<strategy>', 'Auth:auth');
-		$router[] = new Route('/auth/<strategy>/oauth2callback', 'Auth:auth');
-		$router[] = new Route('/auth/<strategy>/oauth_callback', 'Auth:auth');
-		$router[] = new Route('/auth/<strategy>/int_callback', 'Auth:auth');
+		$basePath = $this->config['path'];
+		$presenter = $this->config['presenter'];
+
+		$router[] = new Route($basePath.'logout', $presenter.':logout');
+		$router[] = new Route($basePath.'callback', $presenter.':callback');
+		$router[] = new Route($basePath.'<strategy>', $presenter.':auth');
+		$router[] = new Route($basePath.'<strategy>/oauth2callback', $presenter.':auth');
+		$router[] = new Route($basePath.'<strategy>/oauth_callback', $presenter.':auth');
+		$router[] = new Route($basePath.'<strategy>/int_callback', $presenter.':auth');
 	}
 
 	/**
@@ -127,6 +132,9 @@ class NetteOpauth
 				break;
 			case "Google":
 				return new GoogleIdentity($info);
+				break;
+			default:
+				return new BaseIdentity($info);
 				break;
 		}
 	}

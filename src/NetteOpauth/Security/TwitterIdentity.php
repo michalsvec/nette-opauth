@@ -1,6 +1,6 @@
 <?php
 
-namespace Elemedia\Opauth;
+namespace NetteOpauth\Security;
 
 /**
  * Wrapper for data returned from twitter oauth server
