@@ -5,6 +5,7 @@ namespace NetteOpauth;
 use Nette\Application\IRouter;
 use Nette\Application\Routers\Route;
 use Nette\Diagnostics\Debugger;
+use NetteOpauth\Security\BaseIdentity;
 use NetteOpauth\Security\FacebookIdentity;
 use NetteOpauth\Security\GoogleIdentity;
 use NetteOpauth\Security\TwitterIdentity;
@@ -56,7 +57,7 @@ class NetteOpauth
 		}
 
 		// let the Opauth do the magic :)
-		new Opauth($this->config);
+		new \Opauth($this->config);
 	}
 
 	public function callback()
