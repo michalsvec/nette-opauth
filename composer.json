@@ -17,6 +17,14 @@
 	},
 	"require": {
 		"nette/nette": "~2",
-		"opauth/opauth": "@stable"
-	}
+		"opauth/opauth": "*",
+		"opauth/facebook": "*",
+		"opauth/google": "*",
+		"opauth/twitter": "*"
+	},
+	 "autoload": {
+        "psr-0": {
+            "nette-opauth": "src"
+        }
+    }
 }
