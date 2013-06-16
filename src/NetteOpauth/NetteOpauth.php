@@ -1,6 +1,6 @@
 <?php
 
-namespace Elemedia\Opauth;
+namespace NetteOpauth;
 
 use Nette\Application\IRouter;
 use Nette\Application\Routers\Route;
@@ -13,7 +13,19 @@ use Nette\Application\Routers\Route;
  */
 class NetteOpauth 
 {
+	/**
+	 * @param $user
+	 */
+	public function __construct($user)
+	{
 
+	}
+
+	/**
+	 * Method which redirects to oauth provider
+	 *
+	 * @param string|null $strategy chosen strategy - f.e. "facebook". Can be "fake" to use on localhost
+	 */
 	public function auth($strategy = NULL)
 	{
 		if($strategy == 'fake') {
@@ -32,11 +44,7 @@ class NetteOpauth
 				'provider' => 'Google'
 			);
 
-			$identity = \Elemedia\Opauth\Opauth::createIdentity($fakeLogin);
-			$this->user->login($identity);
-
-			$this->redirect($this->context->parameters['auth']['login_action']);
-			return;
+			return $this->createIdentity($fakeLogin);
 		}
 
 		// let the Opauth do the magic :)
@@ -79,7 +87,7 @@ class NetteOpauth
 
 		\Nette\Diagnostics\Debugger::barDump($response['auth'], 'authInfo');
 
-		return static::createIdentity($response['auth']);
+		return $this->createIdentity($response['auth']);
 	}
 
 	/**
@@ -102,7 +110,7 @@ class NetteOpauth
 	 * @param  array $info  array returned from oauth provider
 	 * @return IOpauthIdentity
 	 */
-	public static function createIdentity($info)
+	private function createIdentity($info)
 	{
 		switch($info['provider'])
 		{

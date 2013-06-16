@@ -1,6 +1,6 @@
 <?php
 
-namespace Elemedia\Opauth;
+namespace NetteOpauth\Security;
 
 /**
  * Basic interface common for all oauth providers

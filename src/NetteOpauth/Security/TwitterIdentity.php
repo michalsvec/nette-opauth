@@ -9,21 +9,17 @@ namespace Elemedia\Opauth;
  */
 class TwitterIdentity extends BaseIdentity implements IOpauthIdentity 
 {
+	/**
+	 * {@inheritdoc}
+	 */
 	public function getProvider()
 	{
 		return "Twitter";
 	}
 
-	public function getName()
-	{
-		return $this->data['name'];
-	}
-
-	public function getImage()
-	{
-		return $this->data["image"];
-	}
-
+	/**
+	 * {@inheritdoc}
+	 */
 	public function getProfileUrl()
 	{
 		return $this->date["link"]['twitter'];
