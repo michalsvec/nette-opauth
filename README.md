@@ -12,19 +12,16 @@ As it's an Opauth extension for Nette framework, it requires
 Installation
 ------------
 
-It's still in beta and still not a packagist package. Update composer.json:
+Update composer.json:
 ```json
- "repositories": [
-     { "type": "vcs", "url": "http://github.com/michalsvec/nette-opauth" }
- ],
  "require": {
      "michalsvec/nette-opauth": "*"
- },
+ }
 ```
 and then
 
 ```sh
-$ composer update
+$ composer install
 ```
 
 ```php
@@ -36,7 +33,7 @@ $configurator->onCompile[] = function (\Nette\Config\Configurator $config, \Nett
 // register routers
 \NetteOpauth\NetteOpauth::register($container->router);
 ```
-and update Auth presenter as shown in examples.
+and update Auth presenter as shown in example.
 
 Then you can use:
 ```html
