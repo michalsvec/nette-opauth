@@ -1,9 +1,8 @@
 {
-	"name": "kingofthejungle/nette-opauth",
+	"name": "michalsvec/nette-opauth",
 	"type": "library",
 	"description": "Opauth extension for Nette framework",
 	"keywords": ["nette", "opauth"],
-	"homepage": "",
 	"license": "MIT",
 	"authors": [
 		{
@@ -13,7 +12,7 @@
 	],
 	"support": {
 		"email": "kontakt@michalsvec.cz",
-		"issues": "https://github.com/kingofthejungle/nette-opauth"
+		"issues": "https://github.com/michalsvec/nette-opauth"
 	},
 	"require": {
 		"nette/nette": "~2",

@@ -1,4 +1,4 @@
-kingofthejungle/nette-opauth
+michalsvec/nette-opauth
 ============================
 
 Requirements
@@ -15,10 +15,10 @@ Installation
 It's still in beta and still not a packagist package. Update composer.json:
 ```json
  "repositories": [
-     { "type": "vcs", "url": "http://github.com/kingofthejungle/nette-opauth" }
+     { "type": "vcs", "url": "http://github.com/michalsvec/nette-opauth" }
  ],
  "require": {
-     "kingofthejungle/nette-opauth": "*"
+     "michalsvec/nette-opauth": "*"
  },
 ```
 and then
