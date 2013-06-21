@@ -83,13 +83,13 @@ class NetteOpauth
 		Debugger::log($response);
 
 		if (array_key_exists('error', $response)) {
-			throw new Exception($response['message']);
+			throw new \Exception($response['message']);
 		}
 
 		if (empty($response['auth']) || empty($response['timestamp']) || empty($response['signature']) || empty($response['auth']['provider']) || empty($response['auth']['uid'])) {
-			throw new Exception('Invalid auth response: Missing key auth response components');
+			throw new \Exception('Invalid auth response: Missing key auth response components');
 		} elseif (!$Opauth->validate(sha1(print_r($response['auth'], true)), $response['timestamp'], $response['signature'], $reason)) {
-			throw new Exception('Invalid auth response: ' . $reason);
+			throw new \Exception('Invalid auth response: ' . $reason);
 		}
 
 		\Nette\Diagnostics\Debugger::barDump($response['auth'], 'authInfo');
