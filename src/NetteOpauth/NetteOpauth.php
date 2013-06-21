@@ -80,7 +80,7 @@ class NetteOpauth
 				break;
 		}
 
-		Debugger::log($response);
+
 
 		if (array_key_exists('error', $response)) {
 			throw new \Exception($response['message']);
@@ -98,7 +98,7 @@ class NetteOpauth
 	}
 
 	/**
-	 * Function to registeer router for this extension
+	 * Function to register router for this extension
 	 *
 	 * @param IRouter $router
 	 */

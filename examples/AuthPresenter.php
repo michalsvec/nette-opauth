@@ -26,7 +26,6 @@ class AuthPresenter extends \Nette\Application\UI\Presenter
 	public function actionAuth($strategy = NULL)
 	{
 		$this->opauth->auth($strategy);
-		$this->terminate();
 	}
 
 	/**

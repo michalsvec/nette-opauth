@@ -50,10 +50,10 @@ Configure in config.neon
 ```
 opauth:
 	path: '/auth/'
-	debug: true
+	debug: false
 	callback_url: '{path}callback'
 	security_salt: '123abc456def'
-	debug: true
+	callback_transport: 'session'
 	Strategy: [
 		Facebook: [
 			app_id: ''
