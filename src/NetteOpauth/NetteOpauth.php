@@ -41,8 +41,15 @@ class NetteOpauth
 		new \Opauth($this->config);
 	}
 
+	/**
+	 * @param string|null $strategy
+	 * @return IOpauthIdentity
+	 * @throws InvalidArgumentException
+	 * @throws \Exception
+	 */
 	public function callback($strategy)
 	{
+		// BEGIN debug, at production delete this part
 		if($strategy == 'fake') {
 			return $this->createIdentity(array(
 				'uid' => "123123123",
@@ -59,6 +66,7 @@ class NetteOpauth
 				'provider' => 'Google'
 			));
 		}
+		// END debug
 
 		$Opauth = new \Opauth($this->config, false);
 
