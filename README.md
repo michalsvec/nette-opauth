@@ -33,7 +33,9 @@ $configurator->onCompile[] = function (\Nette\Config\Configurator $config, \Nett
 // register routers
 \NetteOpauth\NetteOpauth::register($container->router);
 ```
-and update Auth presenter as shown in example.
+
+Check if routes are in proper order (auth routes before the commons).
+And update Auth presenter as shown in example.
 
 Then you can use:
 ```html
@@ -69,6 +71,20 @@ opauth:
 		]
 	]
 ```
+
+Tips and triks
+--------------
+
+ * opauth need public callback url to proper redirect thus is impossible to use it at localhost (except the fake login).
+ * facebook
+    * registration of [app](https://developers.facebook.com/apps)
+ * google
+    * registration of [app](https://code.google.com/apis/console)
+    * google ids are very long (more than unsigned int) be careful about that
+ * twitter
+    * registration of [app](https://dev.twitter.com/apps)
+    * do not provide email
+
 
 Roadmap
 -------
