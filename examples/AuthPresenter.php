@@ -5,7 +5,7 @@
  *
  * @author Michal Svec <pan.svec@gmail.com>
  */
-class AuthPresenter extends \Nette\Application\UI\Presenter
+class NetteOPAuthExamplePresenter extends \Nette\Application\UI\Presenter
 {
 	/** @var NetteOpauth\NetteOpauth */
 	protected $opauth;
@@ -35,10 +35,8 @@ class AuthPresenter extends \Nette\Application\UI\Presenter
 	{
 		$identity = $this->opauth->callback($strategy);
 
-		/**
-		 * There is a good place for transformation of 3th part identities to your app identity.
-		 * Like pairing with your app accounts.
-		 */
+		// Here is a good place for transformation of 3rd part identities to your app identity.
+		// Like pairing with your app accounts.
 
 		$this->context->user->login($identity);
 		$this->redirect("Homepage:default");
