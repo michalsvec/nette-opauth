@@ -101,7 +101,7 @@ class NetteOpauth
 		}
 
 		if (array_key_exists('error', $response)) {
-			throw new InvalidLoginException($response['message']);
+			throw new InvalidLoginException($response['error']['message']);
 		}
 
 		if (empty($response['auth']) || empty($response['timestamp']) || empty($response['signature']) || empty($response['auth']['provider']) || empty($response['auth']['uid'])) {
