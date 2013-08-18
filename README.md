@@ -24,6 +24,7 @@ and then
 $ composer install
 ```
 
+Update bootstrap.php:
 ```php
 // add compiler extension
 $configurator->onCompile[] = function (\Nette\Config\Configurator $config, \Nette\Config\Compiler $compiler) {
@@ -75,7 +76,7 @@ opauth:
 Tips and triks
 --------------
 
- * opauth need public callback url to proper redirect thus is impossible to use it at localhost (except the fake login).
+ * opauth needs public callback url to proper redirect thus is impossible to use it at localhost (except the fake login).
  * facebook
     * registration of [app](https://developers.facebook.com/apps)
  * google
