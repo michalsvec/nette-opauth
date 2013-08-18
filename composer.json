@@ -1,26 +1,26 @@
 {
-	"name": "michalsvec/nette-opauth",
-	"type": "library",
-	"description": "Opauth extension for Nette framework",
-	"keywords": ["nette", "opauth"],
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Michal Svec",
-			"homepage": "http://michalsvec.cz"
-		}
-	],
-	"support": {
-		"email": "kontakt@michalsvec.cz",
-		"issues": "https://github.com/michalsvec/nette-opauth"
-	},
-	"require": {
-		"nette/nette": "~2",
-		"opauth/opauth": "*",
-		"opauth/facebook": "*",
-		"opauth/google": "*",
-		"opauth/twitter": "*"
-	},
+  "name": "michalsvec/nette-opauth",
+  "type": "library",
+  "description": "Opauth extension for Nette framework",
+  "keywords": ["nette", "opauth"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michal Svec",
+      "homepage": "http://michalsvec.cz"
+    }
+  ],
+  "support": {
+    "email": "pan.svec@gmail.com",
+    "issues": "https://github.com/michalsvec/nette-opauth"
+  },
+  "require": {
+    "nette/nette": "~2",
+    "opauth/opauth": "*",
+    "opauth/facebook": "*",
+    "opauth/google": "*",
+    "opauth/twitter": "*"
+  },
   "autoload": {
     "classmap": ["src/NetteOpauth/"]
   }
