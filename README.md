@@ -57,20 +57,16 @@ opauth:
 	callback_url: '{path}callback'
 	security_salt: '123abc456def'
 	callback_transport: 'session'
-	Strategy: [
-		Facebook: [
+	Strategy:
+		Facebook:
 			app_id: ''
 			app_secret: ''
-		],
-		Google: [
+		Google:
 			client_id: ''
 			client_secret: ''
-		],
-		Twitter: [
-			key: '',
+		Twitter:
+			key: ''
 			secret: ''
-		]
-	]
 ```
 
 Tips and triks
