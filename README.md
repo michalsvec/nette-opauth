@@ -6,7 +6,7 @@ Requirements
 
 As it's an Opauth extension for Nette framework, it requires
 
-- [Nette Framework 2.0.x](https://github.com/nette/nette)
+- [Nette Framework 2.1.*](https://github.com/nette/nette)
 - [Opauth](https://github.com/opauth/opauth)
 
 Installation
