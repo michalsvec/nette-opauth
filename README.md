@@ -14,9 +14,9 @@ Installation
 
 Update composer.json:
 ```json
- "require": {
-     "michalsvec/nette-opauth": "*"
- }
+"require": {
+    "michalsvec/nette-opauth": "*"
+}
 ```
 and then
 
