@@ -19,7 +19,8 @@
     "opauth/opauth": "*",
     "opauth/facebook": "*",
     "opauth/google": "*",
-    "opauth/twitter": "*"
+    "opauth/twitter": "*",
+    "opauth/linkedin": "*"
   },
   "autoload": {
     "classmap": ["src/NetteOpauth/"]
