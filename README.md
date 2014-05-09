@@ -68,7 +68,7 @@ opauth:
 		Twitter:
 			key: ''
 			secret: ''
-		Linkedin:
+		LinkedIn:
 			api_key: ''
 			secret_key: ''
 ```
