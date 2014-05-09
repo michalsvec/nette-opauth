@@ -7,13 +7,13 @@ namespace NetteOpauth\Security;
  *
  * @author Lukas Vana <fabian@fabian.cz>
  */
-class LinkedinIdentity extends BaseIdentity implements IOpauthIdentity 
+class LinkedInIdentity extends BaseIdentity implements IOpauthIdentity 
 {
 	/**
 	 * {@inheritdoc}
 	 */
 	public function getProvider()
 	{
-		return "Linkedin";
+		return "LinkedIn";
 	}
 }

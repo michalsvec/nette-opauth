@@ -9,7 +9,7 @@ use NetteOpauth\Security\BaseIdentity;
 use NetteOpauth\Security\FacebookIdentity;
 use NetteOpauth\Security\GoogleIdentity;
 use NetteOpauth\Security\TwitterIdentity;
-use NetteOpauth\Security\LinkedinIdentity;
+use NetteOpauth\Security\LinkedInIdentity;
 
 /**
  * Init class to plug into Nette framework
@@ -148,8 +148,8 @@ class NetteOpauth
 			case "Google":
 				return new GoogleIdentity($info);
 				break;
-			case "Linkedin":
-				return new LinkedinIdentity($info);
+			case "LinkedIn":
+				return new LinkedInIdentity($info);
 				break;
 			default:
 				return new BaseIdentity($info);
