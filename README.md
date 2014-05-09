@@ -46,6 +46,7 @@ Then you can use:
 <a href="{plink Auth:google}">Sign-in with Google</a><br/>
 <a href="{plink Auth:facebook}">Sign-in with Facebook</a><br/>
 <a href="{plink Auth:twitter}">Sign-in with Twitter</a><br/>
+<a href="{plink Auth:linkedin}">Sign-in with LinkedIn</a><br/>
 ```
 
 Configure in config.neon
@@ -67,6 +68,9 @@ opauth:
 		Twitter:
 			key: ''
 			secret: ''
+		LinkedIn:
+			api_key: ''
+			secret_key: ''
 ```
 
 Tips and triks
@@ -81,6 +85,10 @@ Tips and triks
  * twitter
     * registration of [app](https://dev.twitter.com/apps)
     * do not provide email
+ * linkedin
+    * registration of [app](https://www.linkedin.com/secure/developer)
+    * provide OAuth 2.0 Redirect URLs in app registration: http://yourdomain.tld/auth/linkedin/oauth2callback
+    * to obtain email, include r_emailaddress to scope, eg.: 'scope' => 'r_basicprofile r_emailaddress'.
 
 
 Roadmap
