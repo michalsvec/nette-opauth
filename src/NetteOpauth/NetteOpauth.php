@@ -123,12 +123,12 @@ class NetteOpauth
 	 */
 	public static function register($router)
 	{
-		$router[] = new Route('/auth/logout', 'Auth:logout');
-		$router[] = new Route('/auth/callback', 'Auth:callback');
-		$router[] = new Route('/auth/<strategy>', 'Auth:auth');
-		$router[] = new Route('/auth/<strategy>/oauth2callback', 'Auth:auth');
-		$router[] = new Route('/auth/<strategy>/oauth_callback', 'Auth:auth');
-		$router[] = new Route('/auth/<strategy>/int_callback', 'Auth:auth');
+		$router[] = new Route('auth/logout', 'Auth:logout');
+		$router[] = new Route('auth/callback', 'Auth:callback');
+		$router[] = new Route('auth/<strategy>', 'Auth:auth');
+		$router[] = new Route('auth/<strategy>/oauth2callback', 'Auth:auth');
+		$router[] = new Route('auth/<strategy>/oauth_callback', 'Auth:auth');
+		$router[] = new Route('auth/<strategy>/int_callback', 'Auth:auth');
 	}
 
 	/**
