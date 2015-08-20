@@ -38,7 +38,7 @@ class NetteOPAuthExamplePresenter extends \Nette\Application\UI\Presenter
 		// Here is a good place for transformation of 3rd part identities to your app identity.
 		// Like pairing with your app accounts.
 
-		$this->context->user->login($identity);
+		$this->user->login($identity);
 		$this->redirect("Homepage:default");
 	}
 
