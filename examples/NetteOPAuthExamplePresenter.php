@@ -33,6 +33,10 @@ class NetteOPAuthExamplePresenter extends \Nette\Application\UI\Presenter
 	 */
 	public function actionCallback($strategy)
 	{
+		if ($strategy === NULL) {
+			$this->flashMessage("Authentication failed.", "danger");
+			$this->redirect('Homepage:default');
+		}
 		$identity = $this->opauth->callback($strategy);
 
 		// Here is a good place for transformation of 3rd part identities to your app identity.
