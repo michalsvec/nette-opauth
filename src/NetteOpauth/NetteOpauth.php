@@ -59,6 +59,10 @@ class NetteOpauth
 	 */
 	public function callback($strategy)
 	{
+                if ($strategy === NULL) {
+			throw new InvalidLoginException('No auth response. Probably user cancelled the process.');
+                }            
+            
 		if($this->isFakeStrategy($strategy)) {
 
 			if($this->config['debug'] != true) {
