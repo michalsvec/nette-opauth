@@ -61,8 +61,8 @@ class NetteOpauth
 	{
                 if ($strategy === NULL) {
 			throw new InvalidLoginException('No auth response. Probably user cancelled the process.');
-                }            
-            
+                }
+
 		if($this->isFakeStrategy($strategy)) {
 
 			if($this->config['debug'] != true) {
@@ -95,10 +95,10 @@ class NetteOpauth
 				unset($_SESSION['opauth']);
 				break;
 			case 'post':
-				$response = unserialize(base64_decode($_POST['opauth']));
+				$response = json_decode(base64_decode($_POST['opauth']), true);
 				break;
 			case 'get':
-				$response = unserialize(base64_decode($_GET['opauth']));
+				$response = json_decode(base64_decode($_GET['opauth']), true);
 				break;
 			default:
 				throw new InvalidArgumentException("Unsupported callback transport.");
